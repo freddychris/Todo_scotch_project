@@ -80,10 +80,12 @@ module.exports = {
           });
         }
         return todo
-          .destroy()
-          .then(() => res.status(204).send())
-          .catch(error => res.status(400).send(error));
+    .destroy()
+    .then(() => res.status(200).send({ message: 'Todo deleted successfully.' }))
+    .catch(error => res.status(400).send(error));
       })
       .catch(error => res.status(400).send(error));
   },
 };
+
+
